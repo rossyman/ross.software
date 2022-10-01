@@ -1,5 +1,6 @@
 @import '@fontsource/inter/300.css';
-@import '@fontsource/playfair-display/400-italic.css';
+@import '@fontsource/inter/700.css';
+@import '@fontsource/vollkorn/400-italic.css';
 
 :root {
   --dark: rgb(10, 10, 11);
@@ -24,7 +25,7 @@
           Droid Sans,
           Helvetica Neue,
           sans-serif;
-  --stylized-font: 'Playfair Display',
+  --stylized-font: 'Vollkorn',
           Iowan Old Style,
           Apple Garamond,
           Baskerville,
