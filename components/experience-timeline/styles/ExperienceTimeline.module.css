@@ -81,7 +81,7 @@
   animation: pulsate 1s ease-out infinite;
   opacity: 0.0;
   left: -8px;
-  top: -1px;
+  top: -.25px;
 }
 
 .hiring {
