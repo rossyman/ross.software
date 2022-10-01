@@ -1,0 +1,12 @@
+[
+  {
+    "name": "Svelte + Jest",
+    "href": "https://github.com/rossyman/svelte-add-jest",
+    "description": "A CLI utility \"adder\" created to integrate Jest with svelte-based applications."
+  },
+  {
+    "name": "@Ts.ED/Objection",
+    "href": "https://github.com/tsedio/tsed/tree/production/packages/orm/objection",
+    "description": "ORM utility decorators for Objection relationships and UUID primary columns."
+  }
+]

@@ -1,0 +1,97 @@
+@keyframes pulsate {
+  0% {-webkit-transform: scale(0.1, 0.1); opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {-webkit-transform: scale(1, 1); opacity: 0.0;}
+}
+
+.timeline {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  border-left: 2px dotted var(--text-40);
+}
+
+.timelineEntry {
+  padding: 2rem 1rem;
+  margin-bottom: 1px;
+  position: relative;
+}
+
+.timelineEntry::before {
+  content: '';
+  position: absolute;
+  left: -.05rem;
+  top: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--text);
+  z-index: 1;
+}
+
+.timelineTimespan {
+  display: flex;
+  flex-direction: row;
+  margin-left: -.15rem;
+  padding: .6rem 0;
+  background: var(--bg);
+}
+
+.timeline h3,
+.timeline h4,
+.timeline p {
+  margin: 0 0 .25rem;
+  padding: 0;
+  line-height: 1.6rem;
+}
+
+.timeline p {
+  margin-top: 1rem;
+}
+
+.timeline h4 {
+  color: var(--text-40);
+}
+
+.pulser {
+  margin-left: 1rem;
+  position: relative;
+}
+
+.pulser::before {
+  content: '';
+  width: 10px;
+  height: 10px;
+  background-color: var(--red);
+  border-radius: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.pulser::after {
+  content: '';
+  border: 3px solid var(--red);
+  border-radius: 30px;
+  height: 20px;
+  width: 20px;
+  position: absolute;
+  animation: pulsate 1s ease-out infinite;
+  opacity: 0.0;
+  left: -8px;
+  top: -1px;
+}
+
+.hiring {
+  display: inline-block;
+  padding-top: 1rem;
+  color: var(--red);
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--red-40);
+}
+
+.hiring:hover {
+  text-decoration-color: var(--red);
+}
