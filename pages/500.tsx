@@ -7,7 +7,7 @@ export default function Error500() {
       <h1>500</h1>
       <div>
         <h2>Server-side error occurred</h2>
-        <p className={styles.backButton}><small><Link href="/">Go home</Link></small></p>
+        <p className={styles.backButton}><small><Link href='/'>Go home</Link></small></p>
       </div>
     </div>
   )

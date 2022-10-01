@@ -18,6 +18,7 @@ export default function Document() {
         <meta property='twitter:image' content='https://ross.software/og.png' />
         <link rel='icon' href='/favicon.svg' type='image/svg+xml' />
         <link rel='icon' href='/favicon.ico' type='image/x-icon' sizes='any' />
+        <link rel='apple-touch-icon' href='/apple-touch-icon.png' />
       </Head>
       <body>
         <Main />

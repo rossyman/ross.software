@@ -7,7 +7,7 @@ export default function Error() {
       <h1>Error</h1>
       <div>
         <h2>Unfortunately, an error has occurred</h2>
-        <p className={styles.backButton}><small><Link href="/">Go home</Link></small></p>
+        <p className={styles.backButton}><small><Link href='/'>Go home</Link></small></p>
       </div>
     </div>
   )
