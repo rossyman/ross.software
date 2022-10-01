@@ -93,8 +93,8 @@
   animation: pulsate 1s ease-out infinite;
   opacity: 0.0;
   position: absolute;
-  top: calc(-50% - 1.52px);
-  left: calc(-50% - 1.8px);
+  top: calc(-50% - 2.1px);
+  left: calc(-50% - 2.5px);
 }
 
 .hiring {
