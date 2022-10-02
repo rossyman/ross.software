@@ -16,7 +16,7 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-left: 2px dotted var(--text-40);
+  border-left: 2px dotted var(--text-60);
 }
 
 .timelineEntry {
@@ -49,7 +49,6 @@
 }
 
 .timeline h3,
-.timeline h4,
 .timeline p {
   margin: 0 0 .25rem;
   padding: 0;
@@ -60,8 +59,8 @@
   margin-top: 1rem;
 }
 
-.timeline h4 {
-  color: var(--text-40);
+.role {
+  color: var(--text-60);
 }
 
 .pulser {

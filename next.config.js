@@ -4,6 +4,7 @@
 const nextConfig = {
   reactStrictMode: true,
   swcMinify: true,
+  productionBrowserSourceMaps: true,
   experimental: {
     browsersListForSwc: true,
     legacyBrowsers: false

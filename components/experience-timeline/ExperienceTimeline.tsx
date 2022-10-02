@@ -1,4 +1,3 @@
-import { CSSProperties } from 'react'
 import experiences from './snippets/experiences.json'
 import { getAnimationOrder } from '../utils/getAnimationOrder'
 import { isTimespanEntry } from './interfaces/Experience'
@@ -23,8 +22,8 @@ export default function ExperienceTimeline() {
             ) : (
               <li className={styles.timelineEntry} key={index}>
                 <div>
-                  <h4>{experience.role}</h4>
-                  <h3><a href={experience.href}>{experience.name}</a>, {experience.location}</h3>
+                  <p className={styles.role}>{experience.role}, {experience.location}</p>
+                  <h3><a href={experience.href}>{experience.name}</a></h3>
                   <p>{experience.description}</p>
                   {experience.currentlyHiring && (
                     <a className={styles.hiring} href={experience.currentlyHiring}>

@@ -4,11 +4,11 @@
 
 :root {
   --dark: rgb(10, 10, 11);
-  --dark-40: rgba(10, 10, 11, 0.4);
+  --dark-60: rgba(10, 10, 11, 0.61);
   --dark-20: rgb(25, 25, 25);
   --dark-10: rgba(10, 10, 11, 0.1);
   --light: rgb(250, 250, 250);
-  --light-40: rgba(250, 250, 250, 0.4);
+  --light-60: rgba(250, 250, 250, 0.61);
   --light-20: rgba(250, 250, 250, 0.2);
   --light-10: rgba(250, 250, 250, 0.1);
   --red: rgb(232, 72, 85);
@@ -45,7 +45,7 @@
   --bg: var(--dark);
   --bg-20: var(--dark-20);
   --text: var(--light);
-  --text-40: var(--light-40);
+  --text-60: var(--light-60);
   --selection-color: var(--light-10);
 }
 
@@ -53,7 +53,7 @@
   --bg: var(--light);
   --bg-20: var(--dark-20);
   --text: var(--dark);
-  --text-40: var(--dark-40);
+  --text-60: var(--dark-60);
   --selection-color: var(--dark-10);
 }
 
@@ -135,7 +135,7 @@ footer {
   display: flex;
   flex: 1;
   padding: 2rem 0 0 0;
-  border-top: 2.5px dotted var(--text-40);
+  border-top: 2.5px dotted var(--text-60);
   animation: fadeInUp .7s forwards ease-in-out calc(var(--animation-order) * 100ms);
   opacity: 0;
 }
@@ -149,7 +149,7 @@ a {
   color: inherit;
   text-decoration-thickness: 1.5px;
   text-underline-offset: .3rem;
-  text-decoration-color: var(--text-40);
+  text-decoration-color: var(--text-60);
 }
 
 a:hover {
