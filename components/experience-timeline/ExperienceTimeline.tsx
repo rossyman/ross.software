@@ -1,3 +1,4 @@
+import { StylizedText } from '../stylized-text/StylizedText'
 import experiences from './snippets/experiences.json'
 import { getAnimationOrder } from '../utils/getAnimationOrder'
 import { isTimespanEntry } from './interfaces/Experience'
@@ -26,9 +27,11 @@ export default function ExperienceTimeline() {
                   <h3><a href={experience.href}>{experience.name}</a></h3>
                   <p>{experience.description}</p>
                   {experience.currentlyHiring && (
-                    <a className={styles.hiring} href={experience.currentlyHiring}>
-                      We are hiring!
-                    </a>
+                    <StylizedText>
+                      <a className={styles.hiring} href={experience.currentlyHiring}>
+                        We are hiring!
+                      </a>
+                    </StylizedText>
                   )}
                 </div>
               </li>

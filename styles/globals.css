@@ -173,6 +173,7 @@ h3 {
 
 .stylized-text {
   font-family: var(--stylized-font);
+  font-size: 1.1rem;
   font-weight: 400;
   font-style: italic;
 }

@@ -8,7 +8,7 @@ interface StylizedTextProps {
 export function StylizedText({children, href}: StylizedTextProps) {
   return (
     href
-      ? <a href={href}><StylizedText>{children}</StylizedText></a>
+      ? <StylizedText><a href={href}>{children}</a></StylizedText>
       : <span className='stylized-text'>{children}</span>
   )
 }
