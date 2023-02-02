@@ -1,16 +1,16 @@
 interface ExperienceEntry {
-  name: string
-  role: string
-  description: string
-  href: string
-  currentlyHiring?: string
+    name: string
+    role: string
+    description: string
+    href: string
+    currentlyHiring?: string
 }
 
 interface ExperienceTimespan {
-  timespan: string
+    timespan: string
 }
 
 export type Experience = ExperienceEntry | ExperienceTimespan
 
 export const isTimespanEntry = (experience: Experience): experience is ExperienceTimespan =>
-  (<ExperienceTimespan>experience).timespan !== undefined
+    (<ExperienceTimespan>experience).timespan !== undefined
