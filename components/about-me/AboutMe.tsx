@@ -22,7 +22,7 @@ export default function AboutMe() {
             </p>
             <p className={styles.contentItem}>
                 Graduated with Merit from <StylizedText href={strathclydeLink}>The University of{' '}
-                Strathclyde</StylizedText> with a Bachelors in Software Engineering. Full-stack Engineer{' '}
+                Strathclyde</StylizedText> with a Bachelors in Software Engineering. Senior Software Engineer{' '}
                 at <StylizedText><a href={inflowLink}>Inflow</a></StylizedText>.
             </p>
         </section>
