@@ -1,10 +1,11 @@
-@import '@fontsource/inter/300.css';
+@import '@fontsource/inter/400.css';
 @import '@fontsource/inter/700.css';
 @import '@fontsource/vollkorn/400-italic.css';
 
 :root {
   --dark: rgb(10, 10, 11);
   --dark-60: rgba(10, 10, 11, 0.61);
+  --dark-40: rgba(10, 10, 11, 0.4);
   --dark-20: rgb(25, 25, 25);
   --dark-10: rgba(10, 10, 11, 0.1);
   --light: rgb(250, 250, 250);
@@ -13,6 +14,8 @@
   --light-10: rgba(250, 250, 250, 0.1);
   --red: rgb(232, 72, 85);
   --red-40: rgba(232, 72, 85, 0.4);
+  --scrollbar-size: 16px;
+  --scrollbar-size-min: 44px;
   --font: 'Inter',
           -apple-system,
           BlinkMacSystemFont,
@@ -36,17 +39,13 @@
           serif;
 }
 
-::selection {
-  background: var(--selection-color);
-  text-shadow: none;
-}
-
 [data-theme='dark'] {
   --bg: var(--dark);
   --bg-20: var(--dark-20);
   --text: var(--light);
   --text-60: var(--light-60);
   --selection-color: var(--light-10);
+  --scrollbar-color: var(--light-20);
 }
 
 [data-theme='light'] {
@@ -55,6 +54,31 @@
   --text: var(--dark);
   --text-60: var(--dark-60);
   --selection-color: var(--dark-10);
+  --scrollbar-color: var(--dark-40);
+}
+
+::selection {
+  background: var(--selection-color);
+  text-shadow: none;
+}
+
+::-webkit-scrollbar-button,
+::-webkit-scrollbar-corner {
+  display: none;
+}
+
+::-webkit-scrollbar {
+  width: var(--scrollbar-size);
+  height: var(--scrollbar-size);
+}
+
+::-webkit-scrollbar-thumb {
+  min-height: var(--scrollbar-size-min);
+  min-width: var(--scrollbar-size-min);
+  background-color: var(--scrollbar-color);
+  border-radius: var(--scrollbar-size);
+  border: 5px solid var(--bg);
+  background-clip: padding-box;
 }
 
 @media (max-width: 400px) {
@@ -101,19 +125,25 @@ body[data-theme='light'] {
   color-scheme: light;
 }
 
+html::-webkit-scrollbar {
+  width: 0;
+  height: 0;
+}
+
 html,
 body {
-  padding: 0;
+  padding: 3rem 2rem 2rem;
   margin: 0;
   font-family: var(--font);
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   font-feature-settings: 'kern';
-  font-size: 16px;
-  font-weight: 300;
-  line-height: 1.6rem;
+  font-size: 15px;
+  font-weight: 400;
+  line-height: 1.8rem;
   color: var(--text);
-  background: var(--bg-20);
+  background: var(--bg);
+  letter-spacing: .01rem;
 }
 
 header {
@@ -171,9 +201,8 @@ h3 {
 }
 
 .container {
-  max-width: 800px;
-  padding: 2rem;
-  background: var(--bg);
+  max-width: 640px;
+  margin: 0 auto;
 }
 
 .title {
@@ -182,7 +211,7 @@ h3 {
 
 .stylized-text {
   font-family: var(--stylized-font);
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   font-weight: 400;
   font-style: italic;
 }

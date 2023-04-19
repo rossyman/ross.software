@@ -1,6 +1,6 @@
 interface ExperienceEntry {
     name: string
-    role: string
+    role: string | string[]
     description: string
     href: string
     currentlyHiring?: string
