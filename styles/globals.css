@@ -81,6 +81,18 @@
   background-clip: padding-box;
 }
 
+@media (max-width: 775px) {
+  :root {
+    --container-padding: 1rem;
+  }
+}
+
+@media (min-width: 775px) {
+  :root {
+    --container-padding: 3rem 2rem 2rem;
+  }
+}
+
 @media (max-width: 400px) {
   .hidden-sm {
     display: none;
@@ -132,7 +144,7 @@ html::-webkit-scrollbar {
 
 html,
 body {
-  padding: 3rem 2rem 2rem;
+  padding: var(--container-padding);
   margin: 0;
   font-family: var(--font);
   text-rendering: optimizeLegibility;
