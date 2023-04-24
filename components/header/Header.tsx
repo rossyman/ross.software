@@ -12,7 +12,7 @@ export default function Header() {
             <Link className={styles.homeLink} href='/'>
                 <div className={`title ${styles.pointer}`}>
                     <h1>Ross <span className='hidden-xxsm'>MacPhee</span></h1>
-                    <p>/rɒs<span className='hidden-xxsm'> məkfi</span>/ <span className='hidden-sm'> - RITTech MBCS MIET BSc</span></p>
+                    <p>/rɒs<span className='hidden-xxsm'> məkfi</span>/ <span className='hidden-sm'> - RITTech Advanced MBCS MIET BSc</span></p>
                 </div>
             </Link>
         </header>
