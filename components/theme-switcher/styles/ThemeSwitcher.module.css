@@ -1,9 +1,11 @@
 .container {
     position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     bottom: 2rem;
     right: 2rem;
     cursor: pointer;
-    padding: .5rem;
     border-radius: 50%;
     width: 40px;
     height: 40px;

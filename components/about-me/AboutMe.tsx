@@ -15,7 +15,7 @@ export default function AboutMe() {
     return (
         <section style={ANIMATION_ORDER}>
             <p className={styles.contentItem}>
-                <StylizedText>Building experiences;</StylizedText> improving the lives of others one screen at a time. A{' '}
+                Building experiences; improving the lives of others one screen at a time. A{' '}
                 Member of the Chartered Institute for I.T. (<StylizedText href={mbcsLink}>MBCS</StylizedText>), a Member{' '}
                 of the Institution of Engineering and Technology (<StylizedText href={mietLink}>MIET</StylizedText>) and{' '}
                 an Advanced Registered I.T. Technician (<StylizedText href={rittechLink}>RITTech Advanced</StylizedText>){' '}

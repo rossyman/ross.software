@@ -89,7 +89,7 @@
 
 @media (min-width: 775px) {
   :root {
-    --container-padding: 3rem 2rem 2rem;
+    --container-padding: 2rem;
   }
 }
 
@@ -214,7 +214,6 @@ h3 {
 
 .container {
   max-width: 640px;
-  margin: 0 auto;
 }
 
 .title {
