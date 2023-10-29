@@ -19,13 +19,14 @@
   border-left: 2px dotted var(--text-60);
 }
 
+.timeline > .timelineTimespan:first-of-type {
+  padding-top: 0;
+}
+
 .timelineEntry {
   padding: 1.5rem 0 1.5rem 2rem;
   margin-bottom: 1px;
   position: relative;
-}
-
-.timelineEntryContent {
   display: flex;
   flex-direction: column;
   gap: 1rem;

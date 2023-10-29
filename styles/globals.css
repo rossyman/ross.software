@@ -124,7 +124,7 @@ body {
   font-feature-settings: 'kern';
   font-size: 15px;
   font-weight: 400;
-  line-height: 1.8rem;
+  line-height: 1.9rem;
   color: var(--text);
   background: var(--bg);
   letter-spacing: 0.01rem;
@@ -168,6 +168,10 @@ footer a {
   flex-grow: 1;
 }
 
+p {
+  margin: 0 0 2rem;
+}
+
 a {
   color: inherit;
   text-decoration-thickness: 1.5px;
@@ -182,6 +186,11 @@ a:hover {
 h1,
 h3 {
   font-size: 1rem;
+  margin-top: 0;
+}
+
+h2 {
+  margin: 1.6rem 0;
 }
 
 .container {

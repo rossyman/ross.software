@@ -1,6 +1,6 @@
 import styles from './styles/Header.module.css'
 import Link from 'next/link'
-import Logo from '../logo/Logo'
+import Logo from '../logo/logo.component'
 import {getAnimationOrder} from '../utils/getAnimationOrder'
 
 const ANIMATION_ORDER = getAnimationOrder(0)

@@ -1,7 +1,7 @@
-import AboutMe from '../components/about-me/AboutMe'
-import ContactMe from '../components/contact-me/ContactMe'
-import ExperienceTimeline from '../components/experience-timeline/ExperienceTimeline'
-import Projects from '../components/projects/Projects'
+import AboutMeComponent from '@lib/about-me/about-me.component'
+import ContactMe from '@lib/contact-me/contact-me.component'
+import ExperienceTimeline from '@lib/experience-timeline/experience-timeline.component'
+import Projects from '@lib/projects/projects.component'
 import {Metadata, Viewport} from 'next'
 
 const url = 'https://ross.software'
@@ -16,14 +16,6 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/'
   },
-  icons: {
-    icon: [
-      {url: '/favicon.svg', type: 'image/svg+xml'},
-      {url: '/favicon.ico', type: 'image/x-icon', sizes: 'any'}
-    ],
-    apple: '/icons/apple-touch-icon.png'
-  },
-  manifest: '/manifest.json',
   openGraph: {title, description, url},
   twitter: {title, description}
 }
@@ -35,7 +27,7 @@ export const viewport: Viewport = {
 export default function Home() {
   return (
     <>
-      <AboutMe />
+      <AboutMeComponent />
       <ExperienceTimeline />
       <Projects />
       <ContactMe />

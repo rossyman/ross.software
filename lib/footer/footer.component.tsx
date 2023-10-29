@@ -8,7 +8,7 @@ export default function Footer() {
   return (
     <footer style={ANIMATION_ORDER}>
       <small>
-        <p>&copy; {year}</p>
+        &copy; {year}
       </small>
     </footer>
   )
