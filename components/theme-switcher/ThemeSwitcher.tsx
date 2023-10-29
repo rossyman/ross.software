@@ -1,44 +1,23 @@
 'use client'
 
 import {Moon, Sun} from 'react-feather'
+import {useTheme} from 'next-themes'
+import styles from './styles/ThemeSwitcher.module.css'
 import {useEffect, useState} from 'react'
 
-import {Theme} from './interfaces/Theme'
-import styles from './styles/ThemeSwitcher.module.css'
-
 export default function ThemeSwitcher() {
+  const [mounted, setMounted] = useState(false)
+  const {resolvedTheme, setTheme} = useTheme()
 
-    const [theme, setTheme] = useState<Theme>('light')
+  const toggleTheme = () => {
+    setTheme(resolvedTheme === 'dark' ? 'light' : 'dark')
+  }
 
-    const toggleTheme = () => {
-        setTheme(theme === 'dark' ? 'light' : 'dark')
-    }
+  useEffect(() => setMounted(true), [])
 
-    useEffect(() => {
-        const prefersDarkTheme = window.matchMedia('(prefers-color-scheme: dark)')
-        const prefersLightTheme = window.matchMedia('(prefers-color-scheme: light)')
-
-        setTheme(
-            prefersDarkTheme.matches
-                ? 'dark'
-                : 'light'
-        )
-
-        prefersDarkTheme.addEventListener('change', (e) => e.matches && setTheme('dark'))
-        prefersLightTheme.addEventListener('change', (e) => e.matches && setTheme('light'))
-    }, [])
-
-    useEffect(() => {
-        document.body.dataset.theme = theme
-    }, [theme])
-
-    return (
-        <div className={styles.container} onClick={toggleTheme}>
-            {theme === 'dark' ? (
-                <Sun color='var(--bg)'/>
-            ) : (
-                <Moon color='var(--bg)'/>
-            )}
-        </div>
-    )
+  return (
+    <div className={styles.container} onClick={toggleTheme}>
+      {mounted && <>{resolvedTheme === 'dark' ? <Sun color='var(--bg)' /> : <Moon color='var(--bg)' />}</>}
+    </div>
+  )
 }

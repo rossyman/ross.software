@@ -1,32 +1,26 @@
 [
   {
-    "timespan": "Aug 2022 - Present"
-  },
-  {
     "name": "Inflow",
     "role": ["Senior Software Engineer", "Software Engineer"],
     "location": "London",
+    "timespan": "Aug 2022 - Present",
     "description": "Currently working in the mental-health technology industry, within a first-class cross-functional team delivering React, React Native, Node and TypeScript based solutions for people with ADHD.",
     "href": "https://getinflow.io",
     "currentlyHiring": "https://boards.eu.greenhouse.io/inflow"
   },
   {
-    "timespan": "Feb 2022 - Jul 2022"
-  },
-  {
     "name": "Picnic Technologies B.V.",
-    "role": "Front-end Engineer",
+    "role": "Full-stack Engineer",
     "location": "Amsterdam",
+    "timespan": "Feb 2022 - Jul 2022",
     "description": "Worked within the warehouse management system domain, creating solutions in Angular to enable warehouse workers to get deliveries from A -> B.",
     "href": "https://picnic.app"
-  },
-  {
-    "timespan": "Sep 2018 - Feb 2022"
   },
   {
     "name": "J.P. Morgan Chase & Co.",
     "role": "Full-stack Engineer",
     "location": "Glasgow",
+    "timespan": "Sep 2018 - Feb 2022",
     "description": "Worked primarily in the asset and wealth management sphere, creating bespoke solutions for treasury in Angular and Java.",
     "href": "https://www.jpmorganchase.com"
   }

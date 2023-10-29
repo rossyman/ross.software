@@ -1,7 +1,3 @@
-@import '@fontsource/inter/400.css';
-@import '@fontsource/inter/700.css';
-@import '@fontsource/vollkorn/400-italic.css';
-
 :root {
   --dark: rgb(10, 10, 11);
   --dark-60: rgba(10, 10, 11, 0.61);
@@ -16,27 +12,12 @@
   --red-40: rgba(232, 72, 85, 0.4);
   --scrollbar-size: 16px;
   --scrollbar-size-min: 44px;
-  --font: 'Inter',
-          -apple-system,
-          BlinkMacSystemFont,
-          Segoe UI,
-          Roboto,
-          Oxygen,
-          Ubuntu,
-          Cantarell,
-          Fira Sans,
-          Droid Sans,
-          Helvetica Neue,
-          sans-serif;
-  --stylized-font: 'Vollkorn',
-          Iowan Old Style,
-          Apple Garamond,
-          Baskerville,
-          Times New Roman,
-          Droid Serif,
-          Times,
-          Source Serif Pro,
-          serif;
+  --bg: var(--light);
+  --bg-20: var(--dark-20);
+  --text: var(--dark);
+  --text-60: var(--dark-60);
+  --selection-color: var(--dark-10);
+  --scrollbar-color: var(--dark-40);
 }
 
 [data-theme='dark'] {
@@ -46,15 +27,6 @@
   --text-60: var(--light-60);
   --selection-color: var(--light-10);
   --scrollbar-color: var(--light-20);
-}
-
-[data-theme='light'] {
-  --bg: var(--light);
-  --bg-20: var(--dark-20);
-  --text: var(--dark);
-  --text-60: var(--dark-60);
-  --selection-color: var(--dark-10);
-  --scrollbar-color: var(--dark-40);
 }
 
 ::selection {
@@ -155,14 +127,14 @@ body {
   line-height: 1.8rem;
   color: var(--text);
   background: var(--bg);
-  letter-spacing: .01rem;
+  letter-spacing: 0.01rem;
 }
 
 header {
   display: flex;
   flex: 1;
   align-items: center;
-  animation: fadeIn .7s forwards ease-in-out calc(var(--animation-order) * 100ms);
+  animation: fadeIn 0.7s forwards ease-in-out calc(var(--animation-order) * 100ms);
   opacity: 0;
 }
 
@@ -177,7 +149,7 @@ main {
 }
 
 section {
-  animation: fadeInUp .7s forwards ease-in-out calc(var(--animation-order) * 100ms);
+  animation: fadeInUp 0.7s forwards ease-in-out calc(var(--animation-order) * 100ms);
   opacity: 0;
   margin: 4rem 0;
 }
@@ -187,7 +159,7 @@ footer {
   flex: 1;
   padding: 2rem 0 0 0;
   border-top: 2.5px dotted var(--text-60);
-  animation: fadeInUp .7s forwards ease-in-out calc(var(--animation-order) * 100ms);
+  animation: fadeInUp 0.7s forwards ease-in-out calc(var(--animation-order) * 100ms);
   opacity: 0;
 }
 
@@ -199,7 +171,7 @@ footer a {
 a {
   color: inherit;
   text-decoration-thickness: 1.5px;
-  text-underline-offset: .3rem;
+  text-underline-offset: 0.3rem;
   text-decoration-color: var(--text-60);
 }
 
@@ -222,7 +194,7 @@ h3 {
 
 .stylized-text {
   font-family: var(--stylized-font);
-  font-size: 1.2rem;
+  font-size: 1.1rem;
   font-weight: 400;
   font-style: italic;
 }
