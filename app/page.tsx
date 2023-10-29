@@ -4,6 +4,7 @@ import ExperienceTimeline from '../components/experience-timeline/ExperienceTime
 import Projects from '../components/projects/Projects'
 import {Metadata, Viewport} from 'next'
 
+const url = 'https://ross.software'
 const title = 'Ross MacPhee'
 const description =
   'Building experiences; improving the lives of others one screen at a time. Senior Software Engineer at Inflow'
@@ -11,7 +12,7 @@ const description =
 export const metadata: Metadata = {
   title,
   description,
-  metadataBase: new URL('https://ross.software'),
+  metadataBase: new URL(url),
   alternates: {
     canonical: '/'
   },
@@ -23,7 +24,7 @@ export const metadata: Metadata = {
     apple: '/icons/apple-touch-icon.png'
   },
   manifest: '/manifest.json',
-  openGraph: {title, description},
+  openGraph: {title, description, url},
   twitter: {title, description}
 }
 
