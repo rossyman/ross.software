@@ -11,12 +11,8 @@ export default function Projects() {
       <ul className={styles.projects}>
         {projects.map((project, index) => (
           <li key={index}>
-            <div>
-              <h3>
-                <a href={project.href}>{project.name}</a>
-              </h3>
-              <p>{project.description}</p>
-            </div>
+            <h3><a href={project.href}>{project.name}</a></h3>
+            <p>{project.description}</p>
           </li>
         ))}
       </ul>

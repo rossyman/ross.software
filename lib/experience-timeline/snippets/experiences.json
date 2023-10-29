@@ -1,12 +1,11 @@
 [
   {
     "name": "Inflow",
-    "role": ["Senior Software Engineer", "Software Engineer"],
+    "role": "Senior Software Engineer",
     "location": "London",
-    "timespan": "Aug 2022 - Present",
-    "description": "Currently working in the mental-health technology industry, within a first-class cross-functional team delivering React, React Native, Node and TypeScript based solutions for people with ADHD.",
-    "href": "https://getinflow.io",
-    "currentlyHiring": "https://boards.eu.greenhouse.io/inflow"
+    "timespan": "Aug 2022 - Now",
+    "description": "Currently working in the mental-health technology industry delivering React, React Native, Node and TypeScript based solutions for people with ADHD.",
+    "href": "https://getinflow.io"
   },
   {
     "name": "Picnic Technologies B.V.",

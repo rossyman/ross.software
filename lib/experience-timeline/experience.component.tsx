@@ -1,6 +1,6 @@
 import styles from '@lib/experience-timeline/styles/ExperienceTimeline.module.css'
-import {StylizedText} from '@lib/stylized-text/stylized-text.component'
 import {type Experience} from '@lib/experience-timeline/interfaces/experience'
+import {Briefcase, MapPin} from 'react-feather'
 
 interface ExperienceProps {
   experience: Experience
@@ -9,36 +9,20 @@ interface ExperienceProps {
 
 export default function Experience({experience, first}: ExperienceProps) {
   return (
-    <>
-      <li className={styles.timelineTimespan}>
-        <small>{experience.timespan}</small>
-        {first && <div className={`${styles.pulser} hidden-xxsm`}></div>}
-      </li>
-
-      <li className={styles.timelineEntry}>
-        <h3><a href={experience.href}>{experience.name}</a></h3>
-
-        <div>
-          <small>{experience.location}</small>
-          {Array.isArray(experience.role) ? (
-            experience.role.map(role => (
-              <p key={`${experience.name}-${role}`} className={styles.role}>
-                {role}
-              </p>
-            ))
-          ) : (
-            <p className={styles.role}>{experience.role}</p>
-          )}
+    <li className={styles.timelineItem}>
+      <div className={styles.timelineLeft}>
+        <div className={styles.timelineTimespan}>
+          <small className={styles.timelineTimespanInner}>{experience.timespan} {first &&
+            <div className={`${styles.pulser} hidden-xxsm`}></div>}</small>
         </div>
+        <small className={styles.location}><Briefcase size={'1rem'} /> {experience.role}</small>
+        <small className={styles.location}><MapPin size={'1rem'} /> {experience.location}</small>
+      </div>
 
+      <div className={styles.timelineEntry}>
+        <h3><a href={experience.href}>{experience.name}</a></h3>
         <p>{experience.description}</p>
-
-        {experience.currentlyHiring && (
-          <StylizedText href={experience.currentlyHiring} className={styles.hiring}>
-            We are hiring!
-          </StylizedText>
-        )}
-      </li>
-    </>
+      </div>
+    </li>
   )
 }

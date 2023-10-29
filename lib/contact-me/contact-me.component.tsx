@@ -1,4 +1,3 @@
-import {StylizedText} from '../stylized-text/stylized-text.component'
 import {getAnimationOrder} from '../utils/getAnimationOrder'
 
 const ANIMATION_ORDER = getAnimationOrder(4)
@@ -11,17 +10,10 @@ export default function ContactMe() {
     <section style={ANIMATION_ORDER}>
       <h2>Connect</h2>
       <p>
-        <StylizedText>Let&apos;s hang out</StylizedText>; Contact me on{' '}
-        <StylizedText>
-          <a href={linkedinUrl}>LinkedIn</a>
-        </StylizedText>{' '}
+        Let&apos;s hang out! Contact me on <a href={linkedinUrl}>LinkedIn</a>{' '}
         - If you&apos;re in Glasgow, let&apos;s grab a coffee.
         <br />
-        <StylizedText>Interested in my work? </StylizedText> Find me on{' '}
-        <StylizedText>
-          <a href={githubUrl}>GitHub</a>
-        </StylizedText>
-        .
+        Interested in my work? Find me on <a href={githubUrl}>GitHub</a>.
       </p>
     </section>
   )

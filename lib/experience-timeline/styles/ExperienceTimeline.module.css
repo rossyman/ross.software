@@ -16,43 +16,55 @@
   margin: 0;
   padding: 0;
   list-style: none;
-  border-left: 2px dotted var(--text-60);
+  display: flex;
+  flex-direction: column;
+  gap: 4rem;
 }
 
-.timeline > .timelineTimespan:first-of-type {
-  padding-top: 0;
+.timelineItem {
+  display: flex;
+}
+
+.timelineTimespan {
+  white-space: nowrap;
+  padding-right: 2rem;
+  margin-top: -0.2rem;
+  margin-bottom: 1rem;
+}
+
+@media (max-width: 600px) {
+  .timelineItem {
+    flex-direction: column-reverse;
+  }
+
+  .timelineTimespan {
+    margin-bottom: 0;
+  }
+
+  .timelineLeft {
+    margin-top: 1rem;
+  }
+}
+
+.timelineTimespanInner {
+  display: flex;
+  align-items: center;
+}
+
+.timelineTimespan > small {
+  position: absolute;
+}
+
+.timelineTimespan:after {
+  content: "XXX 0000 — XXX 0000 - XXX";
+  visibility: hidden;
 }
 
 .timelineEntry {
-  padding: 1.5rem 0 1.5rem 2rem;
-  margin-bottom: 1px;
   position: relative;
   display: flex;
   flex-direction: column;
   gap: 1rem;
-}
-
-.timelineEntry::before {
-  content: '';
-  position: absolute;
-  left: -0.05rem;
-  top: 50%;
-  bottom: 0;
-  transform: translateX(-50%);
-  width: 5px;
-  height: 5px;
-  border-radius: 50%;
-  background: var(--text);
-  z-index: 1;
-}
-
-.timelineTimespan {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  margin-left: -0.15rem;
-  padding: 0.6rem 0;
-  background: var(--bg);
 }
 
 .timeline h3,
@@ -60,6 +72,11 @@
   margin: 0 0 0.25rem;
   padding: 0;
   line-height: 1.6rem;
+}
+
+.timeline h3 {
+  display: flex;
+  align-items: center;
 }
 
 .role {
@@ -109,4 +126,10 @@
 
 .hiring:hover {
   text-decoration-color: var(--red);
+}
+
+.location {
+  display: flex;
+  align-items: center;
+  gap: .5rem;
 }
