@@ -5,6 +5,7 @@ import Footer from '@lib/footer/footer.component'
 import Header from '@lib/header/header.component'
 import ThemeSwitcher from '@lib/theme-switcher/theme-switcher.component'
 import {Providers} from '@lib/utils/providers'
+import {Analytics} from '@vercel/analytics/react'
 
 const INTER = Inter({subsets: ['latin'], variable: '--font'})
 const VOLLKORN = Vollkorn({subsets: ['latin'], variable: '--stylized-font'})
@@ -21,6 +22,7 @@ export default function Layout({children}: {children: ReactNode}) {
           <ThemeSwitcher />
         </div>
       </Providers>
+      <Analytics />
     </body>
     </html>
   )
