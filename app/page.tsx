@@ -6,7 +6,7 @@ import {Metadata, Viewport} from 'next'
 
 const url = 'https://ross.software'
 const title = 'Ross MacPhee'
-const description = 'Improving the lives of others one piece of software at a time. Senior Software Engineer at Inflow'
+const description = 'Improving the lives of others, one piece of software at a time. Senior Software Engineer at Inflow'
 
 export const metadata: Metadata = {
   title,

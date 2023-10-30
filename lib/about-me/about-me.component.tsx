@@ -13,7 +13,7 @@ export default function AboutMe() {
   return (
     <section style={ANIMATION_ORDER}>
       <p>
-        Improving the lives of others one piece of software at a time. A Member of the Chartered Institute
+        Improving the lives of others, one piece of software at a time. A Member of the Chartered Institute
         for I.T. (<a href={mbcsLink}>MBCS</a>), a Member of the Institution of Engineering and Technology (
         <a href={mietLink}>MIET</a>) and an Advanced Registered I.T. Technician (
         <a href={rittechLink}>RITTech Advanced</a>) within the UK.
