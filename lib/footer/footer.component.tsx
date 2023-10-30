@@ -1,6 +1,6 @@
 import {getAnimationOrder} from '../utils/getAnimationOrder'
 
-const ANIMATION_ORDER = getAnimationOrder(5)
+const ANIMATION_ORDER = getAnimationOrder(4)
 
 export default function Footer() {
   const year = new Date().getFullYear()

@@ -1,6 +1,6 @@
 import {getAnimationOrder} from '../utils/getAnimationOrder'
 
-const ANIMATION_ORDER = getAnimationOrder(1)
+const ANIMATION_ORDER = getAnimationOrder(0)
 
 export default function AboutMe() {
   const rittechLink =

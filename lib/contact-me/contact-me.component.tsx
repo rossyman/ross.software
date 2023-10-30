@@ -1,6 +1,6 @@
 import {getAnimationOrder} from '../utils/getAnimationOrder'
 
-const ANIMATION_ORDER = getAnimationOrder(4)
+const ANIMATION_ORDER = getAnimationOrder(3)
 
 export default function ContactMe() {
   const linkedinUrl = 'https://www.linkedin.com/in/ross-macphee'

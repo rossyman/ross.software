@@ -3,7 +3,7 @@ import experiences from './snippets/experiences.json'
 import styles from './styles/ExperienceTimeline.module.css'
 import Experience from '@lib/experience-timeline/experience.component'
 
-const ANIMATION_ORDER = getAnimationOrder(2)
+const ANIMATION_ORDER = getAnimationOrder(1)
 
 export default function ExperienceTimeline() {
   return (

@@ -1,12 +1,9 @@
 import styles from './styles/Header.module.css'
 import Logo from '../logo/logo.component'
-import {getAnimationOrder} from '../utils/getAnimationOrder'
-
-const ANIMATION_ORDER = getAnimationOrder(0)
 
 export default function Header() {
   return (
-    <header style={ANIMATION_ORDER}>
+    <header>
       <Logo width={40} height={40} />
       <div className={`title ${styles.pointer}`}>
         <h1>

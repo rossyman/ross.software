@@ -3,7 +3,7 @@ import projects from './snippets/projects.json'
 import styles from './styles/Projects.module.css'
 import {ArrowUpRight} from 'react-feather'
 
-const ANIMATION_ORDER = getAnimationOrder(3)
+const ANIMATION_ORDER = getAnimationOrder(2)
 
 export default function Projects() {
   return (
