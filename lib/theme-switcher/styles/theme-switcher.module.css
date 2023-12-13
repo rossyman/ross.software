@@ -1,24 +1,33 @@
 .container {
   position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  display: flex;
+  gap: .5rem;
+  flex-direction: column;
+}
+
+.switcher {
   display: flex;
   justify-content: center;
   align-items: center;
-  bottom: 2rem;
-  right: 2rem;
   cursor: pointer;
   border-radius: 50%;
   width: 40px;
   height: 40px;
   background: var(--text);
   color: var(--bg);
+  transition:
+    margin-bottom .3s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility .3s;
 }
 
-.themeContainer {
-  bottom: 2rem;
-  right: 2rem;
+.systemSwitcherOut {
+  margin-bottom: calc(0px - (40px + .5rem));
+  visibility: hidden;
 }
 
-.systemContainer {
-  bottom: 5rem;
-  right: 2rem;
+.systemSwitcherIn {
+  margin-bottom: 0;
+  visibility: visible;
 }
