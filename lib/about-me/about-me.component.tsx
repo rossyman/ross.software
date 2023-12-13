@@ -1,4 +1,4 @@
-import {getAnimationOrder} from '../utils/getAnimationOrder'
+import {getAnimationOrder} from '../utils/get-animation-order'
 
 const ANIMATION_ORDER = getAnimationOrder(0)
 
@@ -20,7 +20,8 @@ export default function AboutMe() {
       </p>
       <p>
         Graduated with Merit from <a href={strathclydeLink}>The University of Strathclyde</a> with a Bachelors in
-        Software Engineering. Senior Software Engineer at <a href={inflowLink}>Inflow</a>.
+        Software Engineering. Previously Senior Software Engineer and Lead DevOps Engineer at{' '}
+        <a href={inflowLink}>Inflow</a>.
       </p>
     </section>
   )

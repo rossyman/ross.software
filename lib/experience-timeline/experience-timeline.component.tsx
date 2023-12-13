@@ -1,6 +1,6 @@
-import {getAnimationOrder} from '../utils/getAnimationOrder'
+import {getAnimationOrder} from '../utils/get-animation-order'
 import experiences from './snippets/experiences.json'
-import styles from './styles/ExperienceTimeline.module.css'
+import styles from './styles/experience-timeline.module.css'
 import Experience from '@lib/experience-timeline/experience.component'
 
 const ANIMATION_ORDER = getAnimationOrder(1)

@@ -1,4 +1,4 @@
-import {getAnimationOrder} from '../utils/getAnimationOrder'
+import {getAnimationOrder} from '../utils/get-animation-order'
 
 const ANIMATION_ORDER = getAnimationOrder(3)
 

@@ -1,6 +1,6 @@
-import {getAnimationOrder} from '../utils/getAnimationOrder'
+import {getAnimationOrder} from '../utils/get-animation-order'
 import projects from './snippets/projects.json'
-import styles from './styles/Projects.module.css'
+import styles from './styles/projects.module.css'
 import {ArrowUpRight} from 'react-feather'
 
 const ANIMATION_ORDER = getAnimationOrder(2)

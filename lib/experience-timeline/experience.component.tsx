@@ -1,4 +1,4 @@
-import styles from '@lib/experience-timeline/styles/ExperienceTimeline.module.css'
+import styles from '@lib/experience-timeline/styles/experience-timeline.module.css'
 import {type Experience} from '@lib/experience-timeline/interfaces/experience'
 import {Briefcase, MapPin} from 'react-feather'
 
