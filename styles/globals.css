@@ -173,11 +173,12 @@ p {
 a {
   color: inherit;
   font-family: var(--stylized-font);
-  font-size: 1.1rem;
+  font-size: 1.05rem;
   font-weight: 400;
   text-decoration-thickness: 1.5px;
   text-underline-offset: 0.3rem;
   text-decoration-color: var(--text-60);
+  text-decoration-style: wavy;
 }
 
 a:hover {

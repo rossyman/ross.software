@@ -19,7 +19,12 @@ export default function Experience({experience, first}: ExperienceProps) {
         <small className={styles.roles}>
           <Briefcase size={'1rem'} />
           <ul>
-            {experience.roles.map((role, i) => <li key={`${experience.name}-${i}`}>{role}</li>)}
+            {experience.roles.map((role, i) =>
+              <li key={`${experience.name}-${i}`}>
+                {i > 0 && <>&uarr;&nbsp;</>}
+                {role}
+              </li>
+            )}
           </ul>
         </small>
       </div>
