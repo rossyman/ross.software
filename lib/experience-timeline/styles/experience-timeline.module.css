@@ -132,4 +132,32 @@
   display: flex;
   align-items: center;
   gap: .5rem;
+  margin-bottom: .5rem;
+}
+
+.roles {
+  display: flex;
+  gap: .5rem;
+}
+
+.roles > ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+}
+
+.roles > ul > li {
+  display: block;
+  line-height: 1.2rem;
+  position: relative;
+}
+
+.roles > ul > li:not(:first-child) {
+  opacity: .5;
+  text-decoration-line: line-through;
+  text-decoration-style: wavy;
+  text-decoration-color: rgba(255, 0, 0, .9);
 }

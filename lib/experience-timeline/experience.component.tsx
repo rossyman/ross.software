@@ -15,8 +15,13 @@ export default function Experience({experience, first}: ExperienceProps) {
           <small className={styles.timelineTimespanInner}>{experience.timespan} {first &&
             <div className={`${styles.pulser} hidden-xxsm`}></div>}</small>
         </div>
-        <small className={styles.location}><Briefcase size={'1rem'} /> {experience.role}</small>
-        <small className={styles.location}><MapPin size={'1rem'} /> {experience.location}</small>
+        <small className={styles.location}><MapPin size={'1rem'} /> <span>{experience.location}</span></small>
+        <small className={styles.roles}>
+          <Briefcase size={'1rem'} />
+          <ul>
+            {experience.roles.map((role, i) => <li key={`${experience.name}-${i}`}>{role}</li>)}
+          </ul>
+        </small>
       </div>
 
       <div className={styles.timelineEntry}>

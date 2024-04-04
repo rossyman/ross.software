@@ -1,7 +1,15 @@
 [
   {
+    "name": "Phasio",
+    "roles": ["Head of Design", "Senior Software Engineer"],
+    "location": "Singapore",
+    "timespan": "Dec 2023 - Present",
+    "description": "Head of Design / Senior Software Engineer at Phasio. Developing a platform which helps manufacturers bring the next generation of products to market.",
+    "href": "https://phas.io"
+  },
+  {
     "name": "Inflow",
-    "role": "Senior Software Engineer",
+    "roles": ["Senior Software Engineer", "Full-stack Engineer"],
     "location": "London",
     "timespan": "Aug 2022 - Dec 2023",
     "description": "Lead DevOps / Infrastructure Engineer at Inflow. Transitioned VPC away from 3rd party provider onto own AWS infrastructure. Created React, React Native, Node and TypeScript based products for people with ADHD.",
@@ -9,7 +17,7 @@
   },
   {
     "name": "Picnic Technologies B.V.",
-    "role": "Full-stack Engineer",
+    "roles": ["Full-stack Engineer"],
     "location": "Amsterdam",
     "timespan": "Feb 2022 - Jul 2022",
     "description": "Worked within the warehouse management system domain, creating solutions in Angular to enable warehouse workers to get deliveries from A -> B.",
@@ -17,7 +25,7 @@
   },
   {
     "name": "J.P. Morgan Chase & Co.",
-    "role": "Full-stack Engineer",
+    "roles": ["Full-stack Engineer"],
     "location": "Glasgow",
     "timespan": "Sep 2018 - Feb 2022",
     "description": "Worked primarily in the asset and wealth management sphere, creating bespoke solutions for treasury in Angular and Java.",
