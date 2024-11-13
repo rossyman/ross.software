@@ -1,7 +1,8 @@
 import '../styles/globals.css'
 import type {PropsWithChildren} from 'react'
 import {Figtree, Montagu_Slab} from 'next/font/google'
-import {Analytics} from '@vercel/analytics/react'
+import {Analytics} from '@vercel/analytics/next'
+import {SpeedInsights} from '@vercel/speed-insights/next'
 import {ThemeProvider} from 'next-themes'
 import {Header} from '@/lib/components/header/header'
 import {Footer} from '@/lib/components/footer/footer'
@@ -23,6 +24,7 @@ export default function Layout({children}: PropsWithChildren) {
           </div>
         </ThemeProvider>
         <Analytics />
+        <SpeedInsights />
       </body>
     </html>
   )
