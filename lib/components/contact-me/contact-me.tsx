@@ -1,13 +1,12 @@
-import {getAnimationOrder} from '../utils/get-animation-order'
+import type {SectionProps} from '@/lib/types/section-props'
 
-const ANIMATION_ORDER = getAnimationOrder(3)
+export const ContactMe = (props: SectionProps) => {
 
-export default function ContactMe() {
   const linkedinUrl = 'https://www.linkedin.com/in/ross-macphee'
   const githubUrl = 'https://github.com/rossyman'
 
   return (
-    <section style={ANIMATION_ORDER}>
+    <section {...props}>
       <h2>Connect</h2>
       <p>
         Let&apos;s hang out! Contact me on <a href={linkedinUrl}>LinkedIn</a>{' '}

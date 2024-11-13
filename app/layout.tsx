@@ -1,29 +1,29 @@
 import '../styles/globals.css'
-import {ReactNode} from 'react'
+import type {PropsWithChildren} from 'react'
 import {Figtree, Montagu_Slab} from 'next/font/google'
-import Footer from '@lib/footer/footer.component'
-import Header from '@lib/header/header.component'
-import ThemeSwitcher from '@lib/theme-switcher/theme-switcher.component'
-import {Providers} from '@lib/utils/providers'
 import {Analytics} from '@vercel/analytics/react'
+import {ThemeProvider} from 'next-themes'
+import {Header} from '@/lib/components/header/header'
+import {Footer} from '@/lib/components/footer/footer'
+import {ThemeSwitcher} from '@/lib/components/theme-switcher/theme-switcher'
 
 const FIGTREE = Figtree({subsets: ['latin'], variable: '--font'})
 const MONTAGU = Montagu_Slab({subsets: ['latin'], variable: '--stylized-font'})
 
-export default function Layout({children}: {children: ReactNode}) {
+export default function Layout({children}: PropsWithChildren) {
   return (
-    <html suppressHydrationWarning lang="en">
-    <body className={`${FIGTREE.variable} ${MONTAGU.variable}`}>
-      <Providers>
-        <div className="container">
-          <Header />
-          <main>{children}</main>
-          <Footer />
-          <ThemeSwitcher />
-        </div>
-      </Providers>
-      <Analytics />
-    </body>
+    <html lang="en" suppressHydrationWarning>
+      <body className={`${FIGTREE.variable} ${MONTAGU.variable}`}>
+        <ThemeProvider disableTransitionOnChange>
+          <div className="container">
+            <Header />
+            <main>{children}</main>
+            <Footer />
+            <ThemeSwitcher />
+          </div>
+        </ThemeProvider>
+        <Analytics />
+      </body>
     </html>
   )
 }

@@ -1,13 +1,11 @@
-import {getAnimationOrder} from '../utils/get-animation-order'
+import type {SectionProps} from '@/lib/types/section-props'
+import styles from './projects.module.css'
 import projects from './snippets/projects.json'
-import styles from './styles/projects.module.css'
 import {ArrowUpRight} from 'react-feather'
 
-const ANIMATION_ORDER = getAnimationOrder(2)
-
-export default function Projects() {
+export const Projects = (props: SectionProps) => {
   return (
-    <section style={ANIMATION_ORDER}>
+    <section {...props}>
       <h2>Projects</h2>
       <ul className={styles.projects}>
         {projects.map((project, index) => (

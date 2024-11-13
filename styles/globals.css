@@ -157,8 +157,6 @@ footer {
   flex: 1;
   padding: 2rem 0 .5rem 0;
   border-top: 2.5px dotted var(--text-60);
-  animation: fadeInUp 0.3s forwards ease-in-out calc(var(--animation-order) * 100ms);
-  opacity: 0;
 }
 
 footer a {

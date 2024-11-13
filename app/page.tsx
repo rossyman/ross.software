@@ -1,8 +1,10 @@
-import AboutMeComponent from '@lib/about-me/about-me.component'
-import ContactMe from '@lib/contact-me/contact-me.component'
-import ExperienceTimeline from '@lib/experience-timeline/experience-timeline.component'
-import Projects from '@lib/projects/projects.component'
-import {Metadata, Viewport} from 'next'
+import type {Metadata, Viewport} from 'next'
+import type {ComponentType, CSSProperties} from 'react'
+import type {SectionProps} from '@/lib/types/section-props'
+import {AboutMe} from '@/lib/components/about-me/about-me'
+import {ExperienceTimeline} from '@/lib/components/experience-timeline/experience-timeline'
+import {Projects} from '@/lib/components/projects/projects'
+import {ContactMe} from '@/lib/components/contact-me/contact-me'
 
 const url = 'https://ross.software'
 const title = 'Ross MacPhee'
@@ -24,12 +26,16 @@ export const viewport: Viewport = {
 }
 
 export default function Home() {
-  return (
-    <>
-      <AboutMeComponent />
-      <ExperienceTimeline />
-      <Projects />
-      <ContactMe />
-    </>
-  )
+
+  const sections: ComponentType<SectionProps>[] = [
+    AboutMe,
+    ExperienceTimeline,
+    Projects,
+    ContactMe
+  ]
+
+  const getAnimationOrder = (order: number): CSSProperties =>
+    ({'--animation-order': order}) as CSSProperties
+
+  return <>{sections.map((Section, i) => <Section key={`section-${i}`} style={getAnimationOrder(i)} />)}</>
 }

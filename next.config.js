@@ -1,9 +1,6 @@
-/**
- * @type {import('next').NextConfig}
- */
+/** @type {import('next').NextConfig} */
 const config = {
   reactStrictMode: true,
-  swcMinify: true,
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
   headers: async () => [
