@@ -3,6 +3,9 @@ const config = {
   reactStrictMode: true,
   productionBrowserSourceMaps: true,
   poweredByHeader: false,
+  experimental: {
+    agentUpgrade: 'latest'
+  },
   headers: async () => [
     {
       source: '/',

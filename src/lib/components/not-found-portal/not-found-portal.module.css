@@ -1,0 +1,93 @@
+.notFound {
+  --ring-scale: 1;
+  --frame: translate(var(--dx, 0px), var(--dy, 0px)) scale(var(--preview-scale, 0));
+  --fade: 1;
+  --duration: 0.3s;
+  --easing: cubic-bezier(0.22, 1, 0.36, 1);
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: calc(100vh - (50px + 10rem));
+  margin: 0;
+}
+
+.notFound:has(.ring:hover, .ring:focus-visible):not([data-opening]) {
+  --ring-scale: 1.05;
+}
+
+.notFound[data-opening] {
+  --ring-scale: var(--open-scale, 20);
+  --frame: translate(0px, 0px) scale(1);
+  --fade: 0;
+  --duration: var(--open-duration);
+  --easing: cubic-bezier(0.7, 0, 0.3, 1);
+}
+
+:global(html):has(.notFound[data-opening]) {
+  overflow: clip;
+}
+
+.code {
+  display: flex;
+  align-items: center;
+  gap: 0.08em;
+  margin: 0;
+  font-family: var(--stylized-font);
+  font-size: clamp(6rem, 32vw, 16rem);
+  font-weight: 800;
+  line-height: 1;
+}
+
+.code > span,
+.message {
+  opacity: var(--fade);
+  transition: opacity calc(var(--duration) / 2) ease;
+}
+
+.ring {
+  position: relative;
+  z-index: 9;
+  display: block;
+  width: 0.74em;
+  height: 0.74em;
+  font-size: inherit;
+  color: var(--text);
+  border-radius: 50%;
+  scale: var(--ring-scale);
+  transition: scale var(--duration) var(--easing);
+}
+
+.ring svg {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.message {
+  margin: 0;
+  text-align: center;
+  color: var(--text-60);
+}
+
+.portal {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  pointer-events: none;
+  background: var(--bg);
+  clip-path: circle(calc(var(--r, 0px) * var(--ring-scale)) at var(--x, 50%) var(--y, 50%));
+  transition: clip-path var(--duration) var(--easing);
+}
+
+.portal iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
+  transform-origin: 0 0;
+  transform: var(--frame);
+  transition: transform var(--duration) var(--easing);
+}

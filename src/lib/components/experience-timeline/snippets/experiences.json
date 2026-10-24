@@ -1,0 +1,34 @@
+[
+  {
+    "name": "Phasio",
+    "shortName": "Phasio",
+    "location": "San Francisco",
+    "start": "2023-12",
+    "end": null,
+    "href": "https://phas.io"
+  },
+  {
+    "name": "Inflow",
+    "shortName": "Inflow",
+    "location": "London",
+    "start": "2022-08",
+    "end": "2023-12",
+    "href": "https://getinflow.io"
+  },
+  {
+    "name": "Picnic Technologies B.V.",
+    "shortName": "Picnic",
+    "location": "Amsterdam",
+    "start": "2022-02",
+    "end": "2022-07",
+    "href": "https://picnic.app"
+  },
+  {
+    "name": "J.P. Morgan Chase & Co.",
+    "shortName": "J.P. Morgan",
+    "location": "Glasgow",
+    "start": "2018-09",
+    "end": "2022-02",
+    "href": "https://www.jpmorganchase.com"
+  }
+]

@@ -1,0 +1,51 @@
+.error {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+  min-height: calc(100vh - (50px + 10rem));
+  margin: 0;
+}
+
+.code {
+  margin: 0;
+  padding-right: 1.5rem;
+  border-right: 2.5px dotted var(--text-60);
+  font-family: var(--stylized-font);
+  font-size: 1.5rem;
+  line-height: 3.5rem;
+}
+
+.body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.title {
+  margin: 0;
+}
+
+.actions {
+  display: flex;
+  align-items: baseline;
+  gap: 1rem;
+}
+
+.actions button {
+  padding: 0;
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-60);
+  font-family: var(--stylized-font);
+  font-size: 0.95rem;
+  font-weight: 500;
+  text-decoration: underline wavy var(--text-60);
+  text-decoration-thickness: 1.5px;
+  text-underline-offset: 0.25rem;
+}
+
+.actions button:hover {
+  text-decoration-color: var(--text);
+}

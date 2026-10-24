@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  gap: 0.5rem;
+  margin-left: auto;
+}
+
+.switcher {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: none;
+  padding: 5px;
+  width: 30px;
+  height: 30px;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.systemSwitcher {
+  margin-right: calc(0px - (30px + 0.5rem));
+  visibility: hidden;
+  transition:
+    margin-right 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    visibility 0.3s;
+}
+
+.container:hover .systemSwitcher,
+.container:has(:focus-visible) .systemSwitcher {
+  margin-right: 0;
+  visibility: visible;
+}
