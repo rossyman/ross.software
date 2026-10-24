@@ -2,60 +2,56 @@
 
 import Link from 'next/link'
 import { useRouter } from 'next/navigation'
-import { type CSSProperties, type MouseEvent, useEffect, useRef, useState } from 'react'
+import { type MouseEvent, useLayoutEffect, useRef } from 'react'
 import { Logo } from '@/lib/components/logo/logo'
 import styles from '@/lib/components/not-found-portal/not-found-portal.module.css'
 
 const HOLE_RATIO = 86.5 / 393
-const PREVIEW_SCALE = 0.12
-const OPEN_DURATION = 1100
+const PORTAL_TIMING: KeyframeAnimationOptions = { duration: 1100, easing: 'cubic-bezier(0.7, 0, 0.3, 1)', fill: 'both' }
 
 export const NotFoundPortal = () => {
-  const root = useRef<HTMLElement>(null)
   const ring = useRef<HTMLAnchorElement>(null)
-  const [opening, setOpening] = useState(false)
+  const arrived = useRef<() => void>(null)
   const router = useRouter()
 
-  useEffect(() => {
-    const align = () => {
-      if (!root.current || !ring.current) return
-      const bounds = ring.current.getBoundingClientRect()
-      const x = bounds.left + bounds.width / 2
-      const y = bounds.top + bounds.height / 2
-      const radius = ring.current.offsetWidth * HOLE_RATIO
-      const reach = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
-      root.current.style.setProperty('--x', `${x}px`)
-      root.current.style.setProperty('--y', `${y}px`)
-      root.current.style.setProperty('--r', `${radius}px`)
-      root.current.style.setProperty('--dx', `${x - (window.innerWidth / 2) * PREVIEW_SCALE}px`)
-      root.current.style.setProperty('--dy', `${y - radius}px`)
-      root.current.style.setProperty('--preview-scale', `${PREVIEW_SCALE}`)
-      root.current.style.setProperty('--open-scale', `${reach / radius}`)
-    }
-
-    align()
-    window.addEventListener('resize', align)
-    window.addEventListener('scroll', align, { passive: true })
-    return () => {
-      window.removeEventListener('resize', align)
-      window.removeEventListener('scroll', align)
-    }
-  }, [])
+  useLayoutEffect(() => () => arrived.current?.(), [])
 
   const open = (event: MouseEvent<HTMLAnchorElement>) => {
+    if (!ring.current || !('startViewTransition' in document)) return
     if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
     event.preventDefault()
-    setOpening(true)
-    window.setTimeout(() => router.push('/'), OPEN_DURATION)
+
+    const bounds = ring.current.getBoundingClientRect()
+    const x = bounds.left + bounds.width / 2
+    const y = bounds.top + bounds.height / 2
+    const radius = bounds.width * HOLE_RATIO
+    const reach = Math.hypot(Math.max(x, window.innerWidth - x), Math.max(y, window.innerHeight - y))
+
+    const root = document.documentElement
+    root.dataset.portal = ''
+
+    const transition = document.startViewTransition(
+      () =>
+        new Promise<void>((resolve) => {
+          arrived.current = resolve
+          router.push('/', { scroll: false })
+        })
+    )
+    transition.ready.then(() => {
+      root.animate(
+        { transformOrigin: [`${x}px ${y}px`, `${x}px ${y}px`], scale: [1, reach / radius] },
+        { ...PORTAL_TIMING, pseudoElement: '::view-transition-old(root)' }
+      )
+      root.animate(
+        { clipPath: [`circle(${radius}px at ${x}px ${y}px)`, `circle(${reach}px at ${x}px ${y}px)`] },
+        { ...PORTAL_TIMING, pseudoElement: '::view-transition-new(root)' }
+      )
+    })
+    transition.finished.finally(() => delete root.dataset.portal)
   }
 
   return (
-    <section
-      ref={root}
-      className={styles.notFound}
-      data-opening={opening || undefined}
-      style={{ '--open-duration': `${OPEN_DURATION}ms` } as CSSProperties}
-    >
+    <section className={styles.notFound}>
       <h2 className={styles.code} aria-label="404">
         <span aria-hidden="true">4</span>
         <Link ref={ring} href="/" className={styles.ring} onClick={open} aria-label="Back home">
@@ -64,9 +60,6 @@ export const NotFoundPortal = () => {
         <span aria-hidden="true">4</span>
       </h2>
       <p className={styles.message}>This page could not be found. Step through the ring to head home.</p>
-      <div className={styles.portal} aria-hidden="true">
-        <iframe src="/" title="Homepage" tabIndex={-1} />
-      </div>
     </section>
   )
 }
